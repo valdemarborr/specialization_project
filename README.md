@@ -70,48 +70,6 @@ If the dataset is proprietary, keep it out of git and add to `.gitignore`:
 * `data/4_well_dataset.xlsx`
 * `data/processed/` (optional, depending on size)
 
-## Setup
-
-### 1) Create environment
-
-Using `venv`:
-
-```bash
-python -m venv .venv
-source .venv/bin/activate  # On Windows: .venv\Scripts\activate
-pip install -r requirements.txt
-```
-
-Or conda:
-
-```bash
-conda create -n drilling-ml python=3.11
-conda activate drilling-ml
-pip install -r requirements.txt
-```
-
-### 2) Required packages
-
-The project requires the following Python packages (create `requirements.txt` if missing):
-
-```
-pandas>=1.5.0
-numpy>=1.23.0
-matplotlib>=3.6.0
-seaborn>=0.12.0
-scikit-learn>=1.2.0
-scipy>=1.10.0
-statsmodels>=0.14.0
-openpyxl>=3.0.0
-pyarrow>=10.0.0
-jupyter>=1.0.0
-```
-
-Install with:
-```bash
-pip install pandas numpy matplotlib seaborn scikit-learn scipy statsmodels openpyxl pyarrow jupyter
-```
-
 ## Pipeline overview
 
 The workflow follows these stages, executed sequentially through Jupyter notebooks:
@@ -225,7 +183,6 @@ To reproduce the results:
    * Figures in `figures/`
    * Statistics tables in `data/tables/`
 
-If results depend on randomness, set fixed seeds in notebook cells (e.g., `random_state=42` in model configurations).
 
 ## Key configuration knobs
 
@@ -247,17 +204,6 @@ Warning indicators are designed to:
 * Flag sustained anomalies (persistence requirement reduces false alarms)
 * Capture both individual pressure deviations (SPP, AP) and cross-pressure patterns (common-mode, difference-mode)
 * Provide interpretable z-scores that can be calibrated to operational risk tolerance
-
-## Citation
-
-If you want others to cite the work:
-
-* Add a `CITATION.cff` file, or
-* Provide a BibTeX entry here (once your thesis details are final)
-
-## License
-
-Add a license file (for example MIT) if you intend the code to be reused. If data are proprietary, clarify that the license does not apply to the dataset.
 
 ## Contact
 
